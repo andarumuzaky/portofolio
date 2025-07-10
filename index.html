@@ -14,18 +14,6 @@
         document.documentElement.classList.remove('dark');
       }
     </script>
-    <style>
-         .typing-cursor {
-    display: inline-block;
-    animation: blink 1s steps(2, start) infinite;
-  }
-
-  @keyframes blink {
-    to {
-      visibility: hidden;
-    }
-  }
-    </style>
   </head>
   <body>
     <!-- Header Start -->
@@ -86,7 +74,7 @@
     <!-- Header End -->
 
     <!-- Hero Section Start -->
- <section id="home" class="pt-36 dark:bg-dark">
+<section id="home" class="pt-36 dark:bg-dark min-h-screen overflow-hidden">
   <div class="container">
     <div class="flex flex-wrap">
       <!-- Konten Kiri -->
@@ -144,7 +132,7 @@
     <!-- Hero Section End -->
 
     <!-- About Section Start -->
-   <section id="about" class="pt-36 pb-32 dark:bg-dark">
+   <section id="about" class="pt-36 pb-32 dark:bg-dark min-h-screen overflow-hidden">
   <div class="container">
     <div class="flex flex-wrap">
       <!-- Kiri -->
@@ -210,7 +198,7 @@
     <!-- About Section End -->
 
     <!-- Portfolio Section Start -->
-    <section id="portfolio" class="bg-slate-100 pt-36 pb-16 dark:bg-slate-800">
+    <section id="portfolio" class="bg-slate-100 pt-36 pb-16 dark:bg-slate-800 min-h-screen overflow-hidden">
       <div class="container">
         <div class="w-full px-4">
           <div class="mx-auto mb-16 max-w-xl text-center">
@@ -514,7 +502,14 @@
     <script src="dist/js/script.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  AOS.init();
+  window.addEventListener('load', function () {
+    AOS.init({
+      once: false, // animasi tetap interaktif
+      duration: 800, // smooth
+      easing: 'ease-in-out',
+    });
+    AOS.refresh(); // perbaiki ukuran elemen setelah semua asset ter-load
+  });
 </script>
   </body>
 </html>

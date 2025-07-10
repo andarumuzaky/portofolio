@@ -763,6 +763,14 @@ video {
   height: 2.5rem;
 }
 
+.min-h-\[300px\] {
+  min-height: 300px;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
 .w-14 {
   width: 3.5rem;
 }
@@ -850,6 +858,10 @@ video {
 
 .flex-wrap {
   flex-wrap: wrap;
+}
+
+.items-start {
+  align-items: flex-start;
 }
 
 .items-center {
