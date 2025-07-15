@@ -15,6 +15,34 @@ window.onscroll = function () {
   }
 };
 
+  function showCategory(category) {
+    const tools = document.getElementById('tools-section');
+    const skills = document.getElementById('skills-section');
+    const btnTools = document.getElementById('btn-tools');
+    const btnSkills = document.getElementById('btn-skills');
+
+    if (category === 'tools') {
+      tools.classList.remove('hidden');
+      skills.classList.add('hidden');
+
+      btnTools.classList.add('bg-primary', 'text-white');
+      btnTools.classList.remove('bg-white', 'dark:bg-dark', 'text-dark', 'dark:text-white');
+
+      btnSkills.classList.remove('bg-primary', 'text-white');
+      btnSkills.classList.add('bg-white', 'dark:bg-dark', 'text-dark', 'dark:text-white');
+    } else {
+      skills.classList.remove('hidden');
+      tools.classList.add('hidden');
+
+      btnSkills.classList.add('bg-primary', 'text-white');
+      btnSkills.classList.remove('bg-white', 'dark:bg-dark', 'text-dark', 'dark:text-white');
+
+      btnTools.classList.remove('bg-primary', 'text-white');
+      btnTools.classList.add('bg-white', 'dark:bg-dark', 'text-dark', 'dark:text-white');
+    }
+  }
+
+
 // Hamburger
 const hamburger = document.querySelector('#hamburger');
 const navMenu = document.querySelector('#nav-menu');
